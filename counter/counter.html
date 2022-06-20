@@ -5,12 +5,18 @@
         <script>
             let counter = 0;
             function count(){
-                alert(counter++); 
+                document.querySelector("h1").innerHTML = counter++;    //queryselector
+                if(counter%10 === 0){            //condition to check if the counter is a multiple of 10 to show alert
+                    alert(`The count is ${counter}`); //template literals 
+                }
             }  
+            document.addEventListener('DOMContentloaded', function(){  //waiting till the complete document is loaded 
+                document.querySelector("button").onclick = count;   //performing actions after loading the document
+            });
         </script>
     </head>
     <body>
-        <h1>Counter</h1>
-        <button onclick="count()">Count</button>
+        <h1>0</h1>
+        <button>Count</button>
     </body>
 </html>
